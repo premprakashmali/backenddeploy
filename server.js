@@ -67,6 +67,12 @@ app.get('/onboarding_status/:user_id', verifyToken, onboarding_Status_controller
 app.get('/auth/amazon/login', control_AmazonLogin);
 app.get('/auth/amazon/callback', handleAmazoneCallback);
 
+app.get('/', (req, res) => {
+  res.send(`
+    <h1>Welcome to My Node.js Server!</h1>
+    <p>This server is running on AWS EC2!</p>
+  `);
+});
 // Server
 const PORT =process.env.PORT || 8081;
 app.listen(PORT, () => {
