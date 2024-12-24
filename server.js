@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const http =require('http')
+const http = require('http')
 // Controllers
 const registerController = require('./controllers/Register_controller');
 const loginController = require('./controllers/Login_controller');
@@ -81,7 +81,7 @@ app.get('/', (req, res) => {
   `);
 });
 
-const PORT =process.env.PORT || 8081;
+const PORT = process.env.PORT || 8081;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
