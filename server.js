@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-
+const http =require('http')
 // Controllers
 const registerController = require('./controllers/Register_controller');
 const loginController = require('./controllers/Login_controller');
@@ -68,6 +68,13 @@ app.get('/auth/amazon/login', control_AmazonLogin);
 app.get('/auth/amazon/callback', handleAmazoneCallback);
 
 // Server
+app.get('/', (req, res) => {
+  res.send(`
+    <h1>Welcome to My Node.js Server!</h1>
+    <p>This server is running on AWS EC2!</p>
+  `);
+});
+
 const PORT =process.env.PORT || 8081;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
